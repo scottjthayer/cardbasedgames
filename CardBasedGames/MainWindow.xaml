@@ -1,0 +1,58 @@
+﻿<Window x:Class="CardBasedGames.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardBasedGames"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="80"/>
+            <ColumnDefinition  Width="160"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="145"/>
+            <RowDefinition Height="145"/>
+            <RowDefinition Height="145"/>
+
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" >
+            <Image  x:Name="playerCardOne" Height="100" Width="70" />
+            <Image  x:Name="playerCardTwo" Height="100" Width="70" />
+            <Image  x:Name="playerCardThree" Height="100" Width="70" />
+            <Image  x:Name="playerCardFour" Height="100" Width="70" />
+            <Image  x:Name="playerCardFive" Height="100" Width="70" />
+            <Image  x:Name="playerCardSix" Height="100" Width="70" />
+            <Image  x:Name="playerCardSeven" Height="100" Width="70" />
+            <Image  x:Name="playerCardEight" Height="100" Width="70" />
+        </WrapPanel>
+        <WrapPanel Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <Image  x:Name="dealerCardOne" Height="100" Width="70" />
+            <Image  x:Name="dealerCardTwo" Height="100" Width="70" />
+            <Image  x:Name="dealerCardThree" Height="100" Width="70" />
+            <Image  x:Name="dealerCardFour" Height="100" Width="70" />
+            <Image  x:Name="dealerCardFive" Height="100" Width="70" />
+            <Image  x:Name="dealerCardSix" Height="100" Width="70" />
+            <Image  x:Name="dealerCardSeven" Height="100" Width="70" />
+            <Image  x:Name="dealerCardEight" Height="100" Width="70" />
+        </WrapPanel>
+        <Button Grid.Column="8" x:Name="Hit" Content="Hit" Click="Hit_Click" Height="20" Width="50" Margin="10,-20,10,10"/>
+        <Button Grid.Column="8" x:Name="Deal" Content="Deal" Click="Deal_Click" Height="20" Width="50" Margin="10,-80,10,10"/>
+        <Button Grid.Column="8" x:Name="Stand" Content="Stand" Click="Stand_Click" Height="20" Width="50" Margin="10,40,10,10"/>
+
+        <TextBlock Grid.Column="8" Grid.Row="1">Player Hand Value</TextBlock>
+        <TextBlock Grid.Column="8" Grid.Row="1" Margin="100,0,0,0" x:Name="playerValue" Text="{Binding Path=handValue}"></TextBlock>
+        <TextBlock Grid.Column="8" Grid.Row="2" HorizontalAlignment="Left" Width="100">Dealer Hand Value</TextBlock>
+        <TextBlock Grid.Column="8" Grid.Row="2" Margin="100,0,0,0" x:Name="dealerHValue" Text="{Binding Path=dealerValue}"></TextBlock>
+
+    </Grid>
+</Window>
